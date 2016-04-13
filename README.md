@@ -15,5 +15,5 @@ When your Open Graph tags aren't working in the frontend, review the ``koning_op
 You can set a default image. Override the following constants:
 
 - ``{$plugin.tx_koningopengraph.defaultImage.url}``: url to your image
-- ``{$plugin.tx_koningopengraph.defaultImage.width}}``: width of your image
-- ``{$plugin.tx_koningopengraph.defaultImage.height}}``: height of your image
+- ``{$plugin.tx_koningopengraph.defaultImage.width}``: width of your image
+- ``{$plugin.tx_koningopengraph.defaultImage.height}``: height of your image
