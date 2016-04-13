@@ -8,6 +8,8 @@ Open Graph tags for TYPO3 pages.
 
 Now a tab should be available in your page properties to set the Open Graph tags.
 
+When your Open Graph tags aren't working in the frontend, review the ``koning_open_graph/Configuration/TypoScript/PageIncludes/setup.txt`` and include the headerData code in your own page configuration (your page object might have a different name than ``page`` for example).
+
 # Configuration
 
 You can set a default image. Override the following constants:
