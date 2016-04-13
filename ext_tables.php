@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'koning_opengraph',
+    'koning_open_graph',
     'Configuration/TypoScript/PageIncludes/',
     'Koning Open Graph - Default Page Includes'
 );

@@ -6,28 +6,28 @@ if (!defined('TYPO3_MODE')) {
 $columns = array(
     'tx_koningopengraph_type' => array(
         'exclude' => 1,
-        'label' => 'LLL:EXT:koning_opengraph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_type',
+        'label' => 'LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_type',
         'config' => array(
             'type' => 'input'
         )
     ),
     'tx_koningopengraph_title' => array(
         'exclude' => 1,
-        'label' => 'LLL:EXT:koning_opengraph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_title',
+        'label' => 'LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_title',
         'config' => array(
             'type' => 'input'
         )
     ),
     'tx_koningopengraph_description' => array(
         'exclude' => 1,
-        'label' => 'LLL:EXT:koning_opengraph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_description',
+        'label' => 'LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_description',
         'config' => array(
             'type' => 'text'
         )
     ),
     'tx_koningopengraph_image' => array(
         'exclude' => 1,
-        'label' => 'LLL:EXT:koning_opengraph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_image',
+        'label' => 'LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_image',
         'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
             'tx_koningopengraph_image',
             array(
@@ -40,6 +40,6 @@ $columns = array(
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $columns);
-$showItem = '--div--;LLL:EXT:koning_opengraph/Resources/Private/Language/locallang_be.xlf:pages.tab.og,
+$showItem = '--div--;LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tab.og,
     tx_koningopengraph_type, tx_koningopengraph_title, tx_koningopengraph_description, tx_koningopengraph_image';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', $showItem);
