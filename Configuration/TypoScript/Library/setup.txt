@@ -5,6 +5,7 @@ lib.koning_open_graph {
     5 {
         wrap = <meta property="og:type" content="|">
         field = tx_koningopengraph_type
+        htmlSpecialChars = 1
         required = 1
     }
 
@@ -68,6 +69,7 @@ lib.koning_open_graph {
     25 {
         wrap = <meta property="og:title" content="|">
         field = tx_koningopengraph_title
+        htmlSpecialChars = 1
         required = 1
     }
 
@@ -76,7 +78,7 @@ lib.koning_open_graph {
     30 {
         wrap = <meta property="og:description" content="|">
         field = tx_koningopengraph_description
+        htmlSpecialChars = 1
         required = 1
     }
-
 }
