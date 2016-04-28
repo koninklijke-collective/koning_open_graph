@@ -8,7 +8,6 @@ namespace Keizer\KoningOpenGraph\Helper;
  */
 class TableContentHelper
 {
-
     /**
      * @return array
      */
@@ -74,5 +73,4 @@ class TableContentHelper
         }
         return $select;
     }
-
 }
