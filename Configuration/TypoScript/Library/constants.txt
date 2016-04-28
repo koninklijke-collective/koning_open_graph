@@ -1,0 +1,10 @@
+plugin.tx_koningopengraph {
+    defaultImage {
+        # cat=plugin.tx_koningopengraph/file; type=string; label=LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:configuration.image.default
+        url =
+        # cat=plugin.tx_koningopengraph/dims; type=int+; label=LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:configuration.image.width
+        width =
+        # cat=plugin.tx_koningopengraph/dims; type=int+; label=LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:configuration.image.height
+        height =
+    }
+}
