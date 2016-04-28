@@ -1,6 +1,12 @@
 <?php
 namespace Keizer\KoningOpenGraph\ViewHelper\OpenGraph;
 
+/**
+ * OpenGraph Title ViewHelper
+ * Usage: <k:openGraph.title>{title}</k:openGraph.title
+ *
+ * @package Keizer\KoningOpenGraph\ViewHelper\OpenGraph
+ */
 class TitleViewHelper extends \Keizer\KoningOpenGraph\ViewHelper\AbstractViewHelper
 {
 
