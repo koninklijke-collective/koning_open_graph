@@ -70,7 +70,6 @@ class TableContentHelper
     {
         $select = array();
         foreach (static::getOpenGraphTypes() as $type) {
-
             $select[] = array($type, $type);
         }
         return $select;
