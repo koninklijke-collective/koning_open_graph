@@ -78,4 +78,5 @@ lib.koning_open_graph {
         field = tx_koningopengraph_description
         required = 1
     }
+
 }

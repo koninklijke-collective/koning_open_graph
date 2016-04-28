@@ -1,9 +1,9 @@
 <?php
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'Open Graph',
-    'description' => 'Manage open graph tags in TYPO3',
+    'description' => 'Manage open graph tags in TYPO3 inside Page Properties',
     'category' => 'plugin',
-    'version' => '1.0.0',
+    'version' => '1.1.0',
     'state' => 'stable',
     'clearCacheOnLoad' => true,
     'author' => 'Jesper Paardekooper',
