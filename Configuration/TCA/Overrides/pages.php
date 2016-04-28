@@ -1,4 +1,6 @@
 <?php
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 if (!defined('TYPO3_MODE')) {
     die('Access denied');
 }
@@ -8,27 +10,39 @@ $columns = array(
         'exclude' => 1,
         'label' => 'LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_type',
         'config' => array(
-            'type' => 'input'
+            'type' => 'input',
+            'eval' => 'trim',
+            'size' => 15,
+            'wizards' => array(
+                'type_picker' => array(
+                    'type' => 'select',
+                    'mode' => '',
+                    'title' => '-- Predefined types --',
+                    'items' => \Keizer\KoningOpenGraph\Helper\TableContentHelper::getOpenGraphTypesForTcaSelect()
+                )
+            )
         )
     ),
     'tx_koningopengraph_title' => array(
         'exclude' => 1,
         'label' => 'LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_title',
         'config' => array(
-            'type' => 'input'
+            'type' => 'input',
+            'eval' => 'trim',
         )
     ),
     'tx_koningopengraph_description' => array(
         'exclude' => 1,
         'label' => 'LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_description',
         'config' => array(
-            'type' => 'text'
+            'type' => 'text',
+            'eval' => 'trim',
         )
     ),
     'tx_koningopengraph_image' => array(
         'exclude' => 1,
         'label' => 'LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tx_koningopengraph_image',
-        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+        'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
             'tx_koningopengraph_image',
             array(
                 'minitems' => 0,
@@ -39,7 +53,19 @@ $columns = array(
     ),
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $columns);
-$showItem = '--div--;LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.tab.og,
-    tx_koningopengraph_type, tx_koningopengraph_title, tx_koningopengraph_description, tx_koningopengraph_image';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', $showItem);
+ExtensionManagementUtility::addTCAcolumns('pages', $columns);
+ExtensionManagementUtility::addFieldsToPalette(
+    'pages',
+    'koning_open_graph',
+    'tx_koningopengraph_type, --linebreak--, tx_koningopengraph_title, --linebreak--, tx_koningopengraph_description, --linebreak--, tx_koningopengraph_image'
+);
+
+// Make sure palette label is shown
+$GLOBALS['TCA']['pages']['palettes']['koning_open_graph']['canNotCollapse'] = 1;
+
+ExtensionManagementUtility::addToAllTCAtypes(
+    'pages',
+    '--palette--;LLL:EXT:koning_open_graph/Resources/Private/Language/locallang_be.xlf:pages.palette.og;koning_open_graph',
+    '',
+    'after:description'
+);

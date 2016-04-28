@@ -3,7 +3,7 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2016-02-20T19:30:32Z" product-name="koning_open_graph">
         <header/>
         <body>
-            <trans-unit id="pages.tab.og">
+            <trans-unit id="pages.palette.og">
                 <source>Open Graph Tags</source>
             </trans-unit>
             <trans-unit id="pages.tx_koningopengraph_type">
@@ -17,6 +17,15 @@
             </trans-unit>
             <trans-unit id="pages.tx_koningopengraph_image">
                 <source>Image</source>
+            </trans-unit>
+            <trans-unit id="configuration.image.default">
+                <source>Url to your default image: Default Image (ex; fileadmin/user_uploads/opengraph_default.png)</source>
+            </trans-unit>
+            <trans-unit id="configuration.image.width">
+                <source>Width of your image</source>
+            </trans-unit>
+            <trans-unit id="configuration.image.height">
+                <source>Height of your image</source>
             </trans-unit>
         </body>
     </file>

@@ -1,0 +1,81 @@
+lib.koning_open_graph = COA
+lib.koning_open_graph {
+    # Set Type
+    5 = TEXT
+    5 {
+        wrap = <meta property="og:type" content="|">
+        field = tx_koningopengraph_type
+        required = 1
+    }
+
+    # Set image
+    10 = FILES
+    10 {
+        stdWrap {
+            outerWrap = <meta property="og:image" content="|">
+            dataWrap = {getIndpEnv:TYPO3_SITE_URL}|
+            ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
+        }
+
+        maxItems = 1
+        references {
+            table = pages
+            uid.field = uid
+            fieldName = tx_koningopengraph_image
+        }
+
+        renderObj = IMG_RESOURCE
+        renderObj {
+            file {
+                import.data = file:current:uid
+                treatIdAsReference = 1
+            }
+        }
+    }
+
+    # Set default image dimensions
+    15 = TEXT
+    15 {
+        stdWrap.if.isFalse.field = tx_koningopengraph_image
+        value (
+                <meta property="og:image:width" content="{$plugin.tx_koningopengraph.defaultImage.width}" />
+                <meta property="og:image:height" content="{$plugin.tx_koningopengraph.defaultImage.height}" />
+        )
+    }
+
+    # Set URL
+    20 = TEXT
+    20 {
+        typolink {
+            parameter.data = TSFE:id
+
+            # do shared page lookup
+            parameter.override.field = content_from_pid
+
+            addQueryString = 1
+            addQueryString.exclude = L,type,cHash
+            type = 0
+
+            forceAbsoluteUrl = 1
+            returnLast = url
+        }
+
+        wrap = <meta property="og:url" content="|">
+    }
+
+    # Set Title
+    25 = TEXT
+    25 {
+        wrap = <meta property="og:title" content="|">
+        field = tx_koningopengraph_title
+        required = 1
+    }
+
+    # Set Description
+    30 = TEXT
+    30 {
+        wrap = <meta property="og:description" content="|">
+        field = tx_koningopengraph_description
+        required = 1
+    }
+}
