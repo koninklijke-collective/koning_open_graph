@@ -10,40 +10,37 @@ lib.koning_open_graph {
     }
 
     # Set image
-    10 = COA
+    10 = FILES
     10 {
-        10 = FILES
-        10 {
-            maxItems = 1
-            references {
-                table = pages
-                uid.data = page:uid
-                fieldName = tx_koningopengraph_image
+        maxItems = 1
+        references {
+            table = pages
+            uid.data = page:uid
+            fieldName = tx_koningopengraph_image
+        }
+
+        renderObj = COA
+        renderObj {
+            10 = TEXT
+            10 {
+                data = file:current:publicUrl
+                outerWrap = <meta property="og:image" content="|">
+                dataWrap = {getIndpEnv:TYPO3_SITE_URL}|
+                ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
             }
 
-            renderObj = COA
-            renderObj {
-                10 = TEXT
-                10 {
-                    data = file:current:publicUrl
-                    outerWrap = <meta property="og:image" content="|">
-                    dataWrap = {getIndpEnv:TYPO3_SITE_URL}|
-                    ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
-                }
+            20 = TEXT
+            20 {
+                data = file:current:width
+                outerWrap = <meta property="og:image:width" content="|">
+                ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
+            }
 
-                20 = TEXT
-                20 {
-                    data = file:current:width
-                    outerWrap = <meta property="og:image:width" content="|">
-                    ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
-                }
-
-                30 = TEXT
-                30 {
-                    data = file:current:height
-                    outerWrap = <meta property="og:image:height" content="|">
-                    ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
-                }
+            30 = TEXT
+            30 {
+                data = file:current:height
+                outerWrap = <meta property="og:image:height" content="|">
+                ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
             }
         }
     }
