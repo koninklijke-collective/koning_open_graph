@@ -23,33 +23,31 @@ lib.koning_open_graph {
         renderObj {
             10 = TEXT
             10 {
-                data = file:current:publicUrl
+                value = {$plugin.tx_koningopengraph.defaultImage.url}
                 outerWrap = <meta property="og:image" content="|">
                 dataWrap = {getIndpEnv:TYPO3_SITE_URL}|
-                ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
             }
 
             20 = TEXT
             20 {
                 data = file:current:width
                 outerWrap = <meta property="og:image:width" content="|">
-                ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
             }
 
             30 = TEXT
             30 {
                 data = file:current:height
                 outerWrap = <meta property="og:image:height" content="|">
-                ifEmpty = {$plugin.tx_koningopengraph.defaultImage.url}
             }
         }
     }
 
-    # Set default image dimensions
+    # Set default
     15 = TEXT
     15 {
         stdWrap.if.isFalse.field = tx_koningopengraph_image
         value (
+            <meta property="og:image:width" content="{$plugin.tx_koningopengraph.defaultImage.url}" />
             <meta property="og:image:width" content="{$plugin.tx_koningopengraph.defaultImage.width}" />
             <meta property="og:image:height" content="{$plugin.tx_koningopengraph.defaultImage.height}" />
         )
