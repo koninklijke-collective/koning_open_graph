@@ -23,7 +23,7 @@ lib.koning_open_graph {
         renderObj {
             10 = TEXT
             10 {
-                value = {$plugin.tx_koningopengraph.defaultImage.url}
+                data = file:current:publicUrl
                 outerWrap = <meta property="og:image" content="|">
                 dataWrap = {getIndpEnv:TYPO3_SITE_URL}|
             }
