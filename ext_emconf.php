@@ -18,7 +18,7 @@ $EM_CONF[$_EXTKEY] = array(
     ),
     'autoload' => array(
         'psr-4' => array(
-            'Keizer\\KoningOpengraph\\' => 'Classes'
+            'Keizer\\KoningOpenGraph\\' => 'Classes'
         )
     ),
 );
