@@ -1,24 +1,24 @@
 <?php
-$EM_CONF[$_EXTKEY] = array(
-    'title' => 'Open Graph',
-    'description' => 'Manage open graph tags in TYPO3 inside Page Properties',
-    'category' => 'plugin',
-    'version' => '1.2.4',
-    'state' => 'stable',
+$EM_CONF[$_EXTKEY] = [
+    'title'            => 'Open Graph',
+    'description'      => 'Manage open graph tags in TYPO3 inside Page Properties',
+    'category'         => 'plugin',
+    'version'          => '1.2.4',
+    'state'            => 'stable',
     'clearCacheOnLoad' => true,
-    'author' => 'Jesper Paardekooper',
-    'author_email' => 'j.paardekooper@develement.nl',
-    'author_company' => 'DevElement',
-    'constraints' => array(
-        'depends' => array(
+    'author'           => 'Jesper Paardekooper',
+    'author_email'     => 'j.paardekooper@develement.nl',
+    'author_company'   => 'DevElement',
+    'constraints'      => [
+        'depends'   => [
             'typo3' => '6.2.0-8.99.99',
-        ),
-        'conflicts' => array(),
-        'suggests' => array(),
-    ),
-    'autoload' => array(
-        'psr-4' => array(
+        ],
+        'conflicts' => [],
+        'suggests'  => [],
+    ],
+    'autoload'         => [
+        'psr-4' => [
             'Keizer\\KoningOpengraph\\' => 'Classes'
-        )
-    ),
-);
+        ]
+    ],
+];
