@@ -1,4 +1,4 @@
-# koning_open_graph
+# [OBSOLETE] koning_open_graph
 Open Graph tags for TYPO3 pages.
 
 # Installation
